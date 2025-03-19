@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace OrderFlow.Models
+namespace OrderFlowApp.Models
 {
     // Order properties
     public class Order
