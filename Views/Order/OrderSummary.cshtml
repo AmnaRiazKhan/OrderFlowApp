@@ -1,0 +1,34 @@
+﻿@model OrderFlowApp.Models.Order
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Result</title>
+    <link rel="stylesheet" href="~/css/styles.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Order Result</h1>
+        <div class="result-summary">
+            <p><strong>Order Amount:</strong> @Model.OrderAmount.ToString("C")</p>
+            <p>
+                <strong>Customer Type:</strong> @{
+                    if (Model.IsCustomerLoyal == true)
+                    { Write("Loyal"); }
+                    else
+                    { Write("New"); }
+                }
+            </p>
+            <p><strong>Discount:</strong> @Model.OrderDiscount.ToString("C")</p>
+            <p><strong>Total Amount:</strong> @Model.FinalAmount.ToString("C")</p>
+        </div>
+        <a href="/Order/OrderEntry" class="btn btn-primary">New Order</a>
+    </div>
+    <script src="~/js/scripts.js"></script>
+</body>
+</html>
+
+
+
+

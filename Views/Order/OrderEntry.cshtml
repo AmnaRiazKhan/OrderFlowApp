@@ -1,0 +1,34 @@
+﻿@model OrderFlowApp.Models.Order
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Entry</title>
+    <link rel="stylesheet" href="~/css/styles.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Order Entry Form</h1>
+        <form asp-action="OrderEntry" method="post" class="order-form">
+            <div class="form-group">
+                <label for="OrderAmount">Order Amount:</label>
+                <input type="number" min="1" asp-for="OrderAmount" class="form-control" required />
+                <span asp-validation-for="OrderAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="CustomerType">Customer Type:</label>
+                <select asp-for="IsCustomerLoyal" class="form-control" required>
+                    <option value="">Select</option>
+                    <option value="false">New</option>
+                    <option value="true">Loyal</option>
+                </select>
+                <span asp-validation-for="IsCustomerLoyal" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <script src="~/js/scripts.js"></script>
+</body>
+</html>
+
