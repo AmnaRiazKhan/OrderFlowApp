@@ -1,4 +1,3 @@
-markdown
 # Order Processing Application
 
 ## Overview
